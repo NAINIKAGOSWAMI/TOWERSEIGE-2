@@ -60,7 +60,7 @@ function setup() {
   //ball holder with slings
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
-
+  
   slingShot = new Slingshot(this.ball,{x:100,y:200});
 
 }
@@ -112,6 +112,8 @@ function draw() {
   image(polygon_img ,ball.position.x,ball.position.y,40,40);
 
   slingShot.display();
+  imageMode(CENTER)
+  image(polygon_img ,ball.position.x,ball.position.y,40,40);
 }
 function mouseDragged(){
   Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
@@ -122,6 +124,6 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      slingShot.attach(ball.body);
+      slingShot.attach(this.ball);
   }
 }

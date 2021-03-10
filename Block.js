@@ -14,8 +14,6 @@ class Block{
         World.add(world, this.body);
       }
       display(){
-        // var angle = this.body.angle;
-        // var pos= this.body.position;
         console.log(this.body.speed);
         if(this.body.speed<3){
           var angle =this.body.angle;
@@ -28,10 +26,8 @@ class Block{
         pop();
         }else{
           World.remove(world,this.body);
-          // tint(255,this.visibility);
-          // image(this.image,this.body.position.x,this.body.position.y,50);
           push();
-          this.visibility = this.visibility;
+          this.visibility = this.visibility-5;
           pop();
         }
         
